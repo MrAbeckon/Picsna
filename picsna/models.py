@@ -1,0 +1,23 @@
+from django.db import models
+from django.contrib.auth.models import User
+
+class CompleteV(models.Model):
+	picture 	= models.ImageField(upload_to='picsna/static/images/complete_view', null=True)
+	title 		= models.CharField( max_length = 100 )
+	link 		= models.CharField( max_length = 550 )
+	description = models.TextField()
+	date_snaped = models.DateTimeField('date snaped', auto_now_add=True)
+
+	def __srt__(self):
+		return self.title
+
+class DetailV(models.Model):
+	picture 	= models.ImageField(upload_to='picsna/static/images/detail_view', null=True)
+	author 		= models.ForeignKey(User, on_delete = models.DO_NOTHING)
+	title 		= models.CharField( max_length = 100 )
+	link 		= models.CharField( max_length = 250 )
+	completev 	= models.ForeignKey(CompleteV, on_delete=models.DO_NOTHING, default=0)
+	date_added 	= models.DateTimeField('date added', auto_now_add=True)
+	
+	def __srt__(self):
+		return self.title

@@ -1,0 +1,31 @@
+{% extends "picsna/base.html" %}
+{% block content %}
+  <div class="login">
+    
+    <form method="POST" id="webinar-sign-in" name="form">  <!-- width: 100% -->
+      <fieldset>
+
+        <!-- DOUBLE CHECK ON EMAIL AND USERNAME -->
+        <div>
+          <label for="name">Username or Email: </label>
+          <input type="text" required name="name" id="name">
+        </div>
+
+        <div>
+          <label for="surname">Password: </label>
+          <input type="password" required name="surname" id="surname">
+        </div>
+
+        <button type="submit" id="submit">LOGIN</button>
+        <a href="{% url 'picsna-register' %}">If you don't have an account, Register</a>
+
+      </fieldset>
+
+    </form>
+
+    <div id="mail-succes" class="mail-not-sent">
+      <h4>You've successfully loged in.</h4>
+    </div>
+
+  </div>
+{% endblock content %}

@@ -1,0 +1,98 @@
+@import "compass/css3";
+
+%center {
+	text-align: center;
+}
+%flex {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	text-align: center;
+}
+%full {
+	width: 100%;
+	height: 100%;
+}
+%overflow-hidden {
+	overflow: hidden;
+}
+%hide {
+	display: none;
+}
+%app-size {
+	width: 100%;
+	height: 100vh;
+}
+
+
+.app {
+	@extend %app-size;
+	@extend %flex;
+
+	%panel-width{
+		width: 250px;
+	}
+	%panel-border {
+		border: 3px solid grey;
+	}
+	%panel-padding {
+		padding: 30px 20px;
+	}
+
+	.login {
+		@extend %panel-width;
+		@extend %panel-border;
+		@extend %panel-padding;
+
+		@extend %flex;
+	}
+	.register {
+		@extend %panel-width;
+		@extend %panel-border;
+		@extend %panel-padding;
+
+		@extend %flex;
+	}
+
+	
+	%play-width {
+		width: 100%;
+	}
+	%play-padding {
+		padding: 20% 25%;
+	}
+	%detail-size {
+		width: 80px;
+		height: 80px;
+	}
+	%detail-radius {
+		@include border-radius(50%);
+	}
+	%detail-rotate {
+		@include transform(rotateZ(-90deg));
+	}
+	.play {
+		@extend %play-width;
+		@extend %play-padding;
+		@extend %flex;
+
+		.detail-item {
+			
+			@extend %detail-size;
+			@extend %detail-radius;
+			@extend %overflow-hidden;
+			@extend %detail-rotate;
+
+			.detail-img {
+				@extend %full;
+			}
+
+			.detail-description {
+				@extend %hide
+			}
+
+		}
+	}
+
+}
