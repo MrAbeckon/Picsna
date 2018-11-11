@@ -1,0 +1,35 @@
+COMMAND:
+python3 manage.py sqlmigrate picsna 0001
+
+--
+-- Create model Complete_View
+--
+CREATE TABLE "picsna_complete_view" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "picture" varchar(100) NOT NULL, "title" varchar(100) NOT NULL, "link" varchar(250) NOT NULL, "description" text NOT NULL, "date_snaped" datetime NOT NULL);
+--
+-- Create model Contains
+--
+CREATE TABLE "picsna_contains" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "c_view_id" integer NOT NULL REFERENCES "picsna_complete_view" ("id") DEFERRABLE INITIALLY DEFERRED);
+--
+-- Create model Detail_View
+--
+CREATE TABLE "picsna_detail_view" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "picture" varchar(100) NOT NULL, "title" varchar(100) NOT NULL, "link" varchar(250) NOT NULL, "date_added" datetime NOT NULL, "author_id" integer NOT NULL REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED, "is_contained_id" integer NOT NULL REFERENCES "picsna_contains" ("id") DEFERRABLE INITIALLY DEFERRED);
+--
+-- Add field d_view to contains
+--
+ALTER TABLE "picsna_contains" RENAME TO "picsna_contains__old";
+CREATE TABLE "picsna_contains" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "c_view_id" integer NOT NULL REFERENCES "picsna_complete_view" ("id") DEFERRABLE INITIALLY DEFERRED, "d_view_id" integer NOT NULL REFERENCES "picsna_detail_view" ("id") DEFERRABLE INITIALLY DEFERRED);
+INSERT INTO "picsna_contains" ("id", "c_view_id", "d_view_id") SELECT "id", "c_view_id", NULL FROM "picsna_contains__old";
+DROP TABLE "picsna_contains__old";
+CREATE INDEX "picsna_detail_view_author_id_6d7836cd" ON "picsna_detail_view" ("author_id");
+CREATE INDEX "picsna_detail_view_is_contained_id_f13b6fb1" ON "picsna_detail_view" ("is_contained_id");
+CREATE INDEX "picsna_contains_c_view_id_2df2f2e3" ON "picsna_contains" ("c_view_id");
+CREATE INDEX "picsna_contains_d_view_id_e8bb60a3" ON "picsna_contains" ("d_view_id");
+--
+-- Add field contains_of to complete_view
+--
+ALTER TABLE "picsna_complete_view" RENAME TO "picsna_complete_view__old";
+CREATE TABLE "picsna_complete_view" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "picture" varchar(100) NOT NULL, "title" varchar(100) NOT NULL, "link" varchar(250) NOT NULL, "description" text NOT NULL, "date_snaped" datetime NOT NULL, "contains_of_id" integer NOT NULL REFERENCES "picsna_contains" ("id") DEFERRABLE INITIALLY DEFERRED);
+INSERT INTO "picsna_complete_view" ("id", "picture", "title", "link", "description", "date_snaped", "contains_of_id") SELECT "id", "picture", "title", "link", "description", "date_snaped", NULL FROM "picsna_complete_view__old";
+DROP TABLE "picsna_complete_view__old";
+CREATE INDEX "picsna_complete_view_contains_of_id_9b4065de" ON "picsna_complete_view" ("contains_of_id");
+COMMIT;
