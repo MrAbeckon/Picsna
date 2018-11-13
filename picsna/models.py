@@ -8,7 +8,7 @@ class CompleteV(models.Model):
 	description = models.TextField()
 	date_snaped = models.DateTimeField('date snaped', auto_now_add=True)
 
-	def __srt__(self):
+	def __str__(self):
 		return self.title
 
 class DetailV(models.Model):
@@ -19,5 +19,5 @@ class DetailV(models.Model):
 	completev 	= models.ForeignKey(CompleteV, on_delete=models.DO_NOTHING, default=0)
 	date_added 	= models.DateTimeField('date added', auto_now_add=True)
 	
-	def __srt__(self):
+	def __str__(self):
 		return self.title

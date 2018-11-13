@@ -3,19 +3,6 @@ from .models import CompleteV
 from .models import DetailV
 
 
-def register(request):
-	context = {
-		'title': 'Register'
-	}
-	return render(request, 'picsna/register.html', context)
-
-def login(request):
-	context = {
-		'title': 'Login'
-	}
-	return render(request, 'picsna/login.html', context)
-
-
 def play(request):
 	context = {
 		'detailViews': DetailV.objects.all(),

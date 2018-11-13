@@ -116,20 +116,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 /* line 62, ../sass/intro.scss */
 .app .play {
-  padding: 20% 25%;
+  padding: 7% 12%;
 }
 /* line 65, ../sass/intro.scss */
 .app .play .detail-item {
   width: 80px;
   height: 80px;
 }
-/* line 69, ../sass/intro.scss */
-.app .play .detail-item {
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-}
 /* line 72, ../sass/intro.scss */
+.app .play .detail-item {
+  margin: 10px;
+}
+/* line 75, ../sass/intro.scss */
 .app .play .detail-item {
   -moz-transform: rotateZ(-90deg);
   -ms-transform: rotateZ(-90deg);

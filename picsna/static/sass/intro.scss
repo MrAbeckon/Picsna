@@ -60,7 +60,7 @@
 		width: 100%;
 	}
 	%play-padding {
-		padding: 20% 25%;
+		padding: 7% 12%;
 	}
 	%detail-size {
 		width: 80px;
@@ -68,6 +68,9 @@
 	}
 	%detail-radius {
 		@include border-radius(50%);
+	}
+	%detail-gap {
+		margin: 10px;
 	}
 	%detail-rotate {
 		@include transform(rotateZ(-90deg));
@@ -80,7 +83,8 @@
 		.detail-item {
 			
 			@extend %detail-size;
-			@extend %detail-radius;
+			// @extend %detail-radius;
+			@extend %detail-gap;
 			@extend %overflow-hidden;
 			@extend %detail-rotate;
 
