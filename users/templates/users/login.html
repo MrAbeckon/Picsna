@@ -7,22 +7,20 @@
       <fieldset id="login-fieldset">
 
         <!-- DOUBLE CHECK ON EMAIL AND USERNAME -->
-        {{ form }}
-        <!-- <div>
-          <label for="name">Username or Email: </label>
-          <input type="text" required name="name" id="name">
+        <div class="username field">
+          <label for="id_username">Username:</label>
+          {{ form.username }}
         </div>
 
-        <div>
-          <label for="surname">Password: </label>
-          <input type="password" required name="surname" id="surname">
-        </div> -->
-
-        <button type="submit" id="submit">LOGIN</button>
-        <a href="{% url 'register' %}">If you don't have an account, Register</a>
+        <div class="password field">
+          <label for="id_password">Password:</label>
+          {{ form.password }}
+        </div>
 
       </fieldset>
-
+        
+        <button type="submit" id="submit">LOGIN</button>
+        <a id="register-link" href="{% url 'register' %}">If you don't have an account, Register</a>
     </form>
 
     <div id="mail-succes" class="mail-not-sent">
