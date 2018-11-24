@@ -1,0 +1,102 @@
+//////////////////
+// FORM STYLING
+%panel-width{
+	width: 400px;
+}
+%panel-border {
+	border-radius: 15px;
+	border: 1px solid grey;
+}
+%panel-padding {
+	padding: 30px 20px;
+}
+%input-border {
+	border-radius: 7px;
+	border: 2px solid blue;
+}
+
+%fieldset {
+	fieldset {
+		position: relative;
+		@extend %flex;
+		@extend %center;
+		margin-bottom: 20px;
+	}
+}
+%submit {
+	#submit {
+		padding: 16px 25px;
+		margin-bottom: 10px;
+		background-color: #207cda;
+	}
+}
+%login-register-link {
+	#login-link, #register-link {
+		display: inline-block;
+		width: 100%;
+	}
+}
+	%field-margin {
+		.field {
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+	}
+	%label {
+		label {
+			width: 40%;
+			text-align: right;
+			display: inline-block;
+		}
+	}
+	%input {
+		input {
+			width: 55%;
+			@extend %input-border;
+		}
+	}
+
+// HELP TEXTS -- not added now
+%helptext-styling {
+	.helptext {
+		display: none;
+		position: absolute;
+		bottom: 70px;
+		left: -150px;
+	}
+}
+
+// BASE STYLING
+%base-styling {
+	@extend %panel-width;
+	@extend %panel-border;
+	@extend %panel-padding;
+	
+	@extend %fieldset;
+	@extend %field-margin;
+	@extend %submit;
+	@extend %login-register-link;
+
+	@extend %input;
+	@extend %label;
+	@extend %helptext-styling;
+
+	@extend %flex;
+	
+	form {
+		width: 100%;
+		height: 100%;
+	}
+}
+.register {
+	@extend %base-styling;
+	background-color: #b4cbf5;
+}
+.login {
+	@extend %base-styling;
+	background-color: #b4cbf5;
+}
+.logout {
+	@extend %base-styling;
+	background-color: #b4cbf5;
+}

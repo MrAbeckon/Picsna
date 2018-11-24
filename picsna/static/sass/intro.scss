@@ -29,33 +29,13 @@
 .app {
 	@extend %app-size;
 	@extend %flex;
-
-	%panel-width{
-		width: 250px;
-	}
-	%panel-border {
-		border: 3px solid grey;
-	}
-	%panel-padding {
-		padding: 30px 20px;
-	}
-
-	.login {
-		@extend %panel-width;
-		@extend %panel-border;
-		@extend %panel-padding;
-
-		@extend %flex;
-	}
-	.register {
-		@extend %panel-width;
-		@extend %panel-border;
-		@extend %panel-padding;
-
-		@extend %flex;
-	}
-
 	
+	/////////////////
+	/// FORM STYLING
+	@import "form";
+
+	//////////////////
+	///	PLAY
 	%play-width {
 		width: 100%;
 	}
@@ -79,6 +59,10 @@
 		@extend %play-width;
 		@extend %play-padding;
 		@extend %flex;
+
+		/////////////////
+		/// TOOLBOX
+		@import "toolbar";
 
 		.detail-item {
 			

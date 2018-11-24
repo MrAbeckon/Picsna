@@ -67,8 +67,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
+/* line 3, ../sass/intro.scss */
+.app .register fieldset, .app .login fieldset, .app .logout fieldset {
+  text-align: center;
+}
+
 /* line 6, ../sass/intro.scss */
-.app, .app .login, .app .register, .app .play {
+.app, .app .register fieldset, .app .login fieldset, .app .logout fieldset, .app .register, .app .login, .app .logout, .app .play {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -98,39 +103,121 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   height: 100vh;
 }
 
-/* line 33, ../sass/intro.scss */
-.app .login, .app .register {
-  width: 250px;
+/* line 3, ../sass/_form.scss */
+.app .register, .app .login, .app .logout {
+  width: 400px;
 }
-/* line 36, ../sass/intro.scss */
-.app .login, .app .register {
-  border: 3px solid grey;
+/* line 6, ../sass/_form.scss */
+.app .register, .app .login, .app .logout {
+  border-radius: 15px;
+  border: 1px solid grey;
 }
-/* line 39, ../sass/intro.scss */
-.app .login, .app .register {
+/* line 10, ../sass/_form.scss */
+.app .register, .app .login, .app .logout {
   padding: 30px 20px;
 }
-/* line 59, ../sass/intro.scss */
+/* line 13, ../sass/_form.scss */
+.app .register input, .app .login input, .app .logout input {
+  border-radius: 7px;
+  border: 2px solid blue;
+}
+/* line 19, ../sass/_form.scss */
+.app .register fieldset, .app .login fieldset, .app .logout fieldset {
+  position: relative;
+  margin-bottom: 20px;
+}
+/* line 27, ../sass/_form.scss */
+.app .register #submit, .app .login #submit, .app .logout #submit {
+  padding: 16px 25px;
+  margin-bottom: 10px;
+  background-color: #207cda;
+}
+/* line 34, ../sass/_form.scss */
+.app .register #login-link, .app .login #login-link, .app .logout #login-link, .app .register #register-link, .app .login #register-link, .app .logout #register-link {
+  display: inline-block;
+  width: 100%;
+}
+/* line 40, ../sass/_form.scss */
+.app .register .field, .app .login .field, .app .logout .field {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+/* line 46, ../sass/_form.scss */
+.app .register label, .app .login label, .app .logout label {
+  width: 40%;
+  text-align: right;
+  display: inline-block;
+}
+/* line 53, ../sass/_form.scss */
+.app .register input, .app .login input, .app .logout input {
+  width: 55%;
+}
+/* line 61, ../sass/_form.scss */
+.app .register .helptext, .app .login .helptext, .app .logout .helptext {
+  display: none;
+  position: absolute;
+  bottom: 70px;
+  left: -150px;
+}
+/* line 86, ../sass/_form.scss */
+.app .register form, .app .login form, .app .logout form {
+  width: 100%;
+  height: 100%;
+}
+/* line 91, ../sass/_form.scss */
+.app .register {
+  background-color: #b4cbf5;
+}
+/* line 95, ../sass/_form.scss */
+.app .login {
+  background-color: #b4cbf5;
+}
+/* line 99, ../sass/_form.scss */
+.app .logout {
+  background-color: #b4cbf5;
+}
+/* line 39, ../sass/intro.scss */
 .app .play {
   width: 100%;
 }
-/* line 62, ../sass/intro.scss */
+/* line 42, ../sass/intro.scss */
 .app .play {
   padding: 7% 12%;
 }
-/* line 65, ../sass/intro.scss */
+/* line 45, ../sass/intro.scss */
 .app .play .detail-item {
   width: 80px;
   height: 80px;
 }
-/* line 72, ../sass/intro.scss */
+/* line 52, ../sass/intro.scss */
 .app .play .detail-item {
   margin: 10px;
 }
-/* line 75, ../sass/intro.scss */
+/* line 55, ../sass/intro.scss */
 .app .play .detail-item {
   -moz-transform: rotateZ(-90deg);
   -ms-transform: rotateZ(-90deg);
   -webkit-transform: rotateZ(-90deg);
   transform: rotateZ(-90deg);
+}
+/* line 1, ../sass/_toolbar.scss */
+.app .play-toolbar {
+  position: absolute;
+  top: 30px;
+  left: 10px;
+}
+/* line 5, ../sass/_toolbar.scss */
+.app .play-toolbar a {
+  padding: 20px 30px;
+  background: black;
+  text-decoration: none;
+}
+/* line 10, ../sass/_toolbar.scss */
+.app .play-toolbar a:active, .app .play-toolbar a:link, .app .play-toolbar a:visited {
+  color: white;
+}
+/* line 13, ../sass/_toolbar.scss */
+.app .play-toolbar a:hover {
+  background-color: #ddd;
+  color: black;
 }
