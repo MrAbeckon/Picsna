@@ -23,8 +23,19 @@ def play(request):
 	return render(request, 'picsna/play.html', context)
 
 def addImg(request):
+	
+	if request.method == 'POST':
+		form = AddImg(request.POST)
+		
+		if form.is_valid():
+			form.save()
+			title = form.cleaned_data.get('title')
+			messages.success(request, f'Detail view created: {title}!')
+			return redirect('picsna-play')
+	else:
+		form = AddImg();
+
 	context = {
 		'title': 'Add your part of the Story',
 	}
-	form = AddImg();
 	return render(request, 'picsna/addImg.html', {'form' : form})

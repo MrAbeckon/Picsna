@@ -3,8 +3,26 @@
 	
   <div class="addImg">
   {% if user.is_authenticated %}
-
-    {{ form }}
+    <form method="POST" id="add-form" name="form" >  
+      {% csrf_token %}
+      <fieldset id="add-fieldset" class="form-group">
+          {{form.errors}}
+        <div class="picture field">
+          <label for="id_picture">Picture:</label>
+          {{ form.picture }}
+        </div>
+        <div class="title field">
+          <label for="id_title">Title:</label>
+          {{ form.title }}
+        </div>
+        <div class="link field">
+          <label for="id_link">Link:</label>
+          {{ form.link }}
+        </div>
+      </fieldset>
+      <button type="submit" id="submit">SUBMIT</button>
+      
+    </form>
 
   {% else %}
 
@@ -15,5 +33,4 @@
 
   {% endif %}
   </div>
-  }
 {% endblock content %}
