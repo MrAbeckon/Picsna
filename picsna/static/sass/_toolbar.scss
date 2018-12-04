@@ -1,18 +1,45 @@
+%button-border {
+	border: 1px solid grey;
+	border-radius: 4px;
+}
+%button-font-weight {
+	font-weight: bold;
+}
+%button-font-style {
+	text-decoration: none;
+}
+%button-font-size {
+	font-size: 14px;
+}
+%button-font-family {
+	font-family: Helvetica;
+}
+%button-font {
+	@extend %button-font-weight;
+	@extend %button-font-style;
+	@extend %button-font-size;
+	@extend %button-font-family;
+}
+
 &-toolbar {
 	position: absolute;
-	top: 30px;
-	left: 10px;
+	bottom: 15%;
+	color: #3f72af;
+
 	a {
-		padding: 20px 30px;
-		background: black;
-		text-decoration: none;
+		@extend %button-font;
+		@extend %button-border;
+		padding: 13px 23px;
+		margin: 20px 5px;
+		box-shadow:0 0 4px -1px #112d4e;
+		transition: all 150ms ease-in-out;
 
 		&:active, &:link, &:visited {
-			color: white;
+			color: #112d4e;
 		}
 		&:hover {
-			background-color: #ddd;
-			color: black;
+			box-shadow:0 0 4px 2px #112d4e;
+			color: #112d4e;
 		}
 	}
 }

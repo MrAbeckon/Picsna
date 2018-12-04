@@ -3,10 +3,16 @@
 	
   <div class="addImg">
   {% if user.is_authenticated %}
-    <form method="POST" id="add-form" name="form" >  
+    
+    <form enctype="multipart/form-data" method="POST" id="add-form" name="form" >  
+    
       {% csrf_token %}
       <fieldset id="add-fieldset" class="form-group">
           {{form.errors}}
+        <div class="picture field">
+          <label for="id_author">Author:</label>
+          {{ form.author }}
+        </div>
         <div class="picture field">
           <label for="id_picture">Picture:</label>
           {{ form.picture }}
@@ -19,7 +25,12 @@
           <label for="id_link">Link:</label>
           {{ form.link }}
         </div>
+        <div class="complete-view field">
+          <label for="id_complete">complete view:</label>
+          {{ form.completev }}
+        </div>
       </fieldset>
+    
       <button type="submit" id="submit">SUBMIT</button>
       
     </form>

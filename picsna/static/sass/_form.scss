@@ -11,8 +11,11 @@
 	padding: 30px 20px;
 }
 %input-border {
-	border-radius: 7px;
-	border: 2px solid blue;
+	border-radius: 5px;
+	border: 1px solid #3f72af;
+	&:active {
+		border-color: #112d4e;
+	}
 }
 
 %fieldset {
@@ -26,7 +29,7 @@
 %submit {
 	#submit {
 		padding: 16px 25px;
-		margin-bottom: 10px;
+		margin-bottom: 25px;
 		background-color: #207cda;
 	}
 }
@@ -34,6 +37,17 @@
 	#login-link, #register-link {
 		display: inline-block;
 		width: 100%;
+		transition: padding 100ms ease;
+		cursor: pointer;
+		
+		&:active, &:link, &:visited {
+			color: #3f72af;
+		}
+		&:hover {
+			color: #112d4e;
+			font-weight: bold;
+			padding-bottom: 10px;
+		}
 	}
 }
 	%field-margin {
@@ -44,14 +58,16 @@
 	}
 	%label {
 		label {
-			width: 40%;
+			width: 30%;
 			text-align: right;
 			display: inline-block;
 		}
 	}
 	%input {
 		input {
-			width: 55%;
+			width: 58%;
+			padding: 4px 4px;
+			margin-left: 20px;
 			@extend %input-border;
 		}
 	}
@@ -82,6 +98,8 @@
 	@extend %helptext-styling;
 
 	@extend %flex;
+
+	box-shadow: 0 0 4px 1px #112d4e;
 	
 	form {
 		width: 100%;
@@ -90,13 +108,10 @@
 }
 .register {
 	@extend %base-styling;
-	background-color: #b4cbf5;
 }
 .login {
 	@extend %base-styling;
-	background-color: #b4cbf5;
 }
 .logout {
 	@extend %base-styling;
-	background-color: #b4cbf5;
 }

@@ -1,10 +1,9 @@
-from django.shortcuts import render
-from django.contrib.auth.models import User
+from django.shortcuts import render, redirect
+from django.core.files.uploadedfile import SimpleUploadedFile
 from .models import CompleteV
 from .models import DetailV
 from .forms import AddImg
 from .forms import Complete
-
 
 def play(request):
 	context = {
@@ -18,24 +17,26 @@ def play(request):
 		# 	 ],
 		'completeView': CompleteV.objects.last(),
 		'title': 'Play',
-		'user': User
+		'user': request.user
 	}
 	return render(request, 'picsna/play.html', context)
 
 def addImg(request):
-	
+
 	if request.method == 'POST':
-		form = AddImg(request.POST)
-		
+
+		form = AddImg(request.POST, request.FILES) 
+        # form = super(AddImg, self).save(commit=False)
+        # form.author = request.user
+
 		if form.is_valid():
-			form.save()
-			title = form.cleaned_data.get('title')
-			messages.success(request, f'Detail view created: {title}!')
-			return redirect('picsna-play')
+			form.save()			
+		else:
+			print("Invalid Form")	
+
+		return redirect('picsna-play')
+			
 	else:
 		form = AddImg();
 
-	context = {
-		'title': 'Add your part of the Story',
-	}
-	return render(request, 'picsna/addImg.html', {'form' : form})
+	return render(request, 'picsna/addImg.html', {'form' : form })

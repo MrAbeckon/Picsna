@@ -1,3 +1,4 @@
+# from django.core.files.uploadedfile import SimpleUploadedFile
 from django.forms import ModelForm
 from .models import CompleteV
 from .models import DetailV
@@ -5,7 +6,7 @@ from .models import DetailV
 class AddImg(ModelForm):
 	class Meta:
 		model = DetailV
-		fields = ['picture', 'title', 'link']
+		fields = ['picture','title', 'link', 'author', 'completev']
 
 class Complete(ModelForm):
 	class Meta:

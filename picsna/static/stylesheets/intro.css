@@ -49,41 +49,59 @@
 }
 /* line 13, ../sass/_form.scss */
 .app .register input, .app .login input, .app .logout input {
-  border-radius: 7px;
-  border: 2px solid blue;
+  border-radius: 5px;
+  border: 1px solid #3f72af;
 }
-/* line 19, ../sass/_form.scss */
+/* line 16, ../sass/_form.scss */
+.app .register input:active, .app .login input:active, .app .logout input:active {
+  border-color: #112d4e;
+}
+/* line 22, ../sass/_form.scss */
 .app .register fieldset, .app .login fieldset, .app .logout fieldset {
   position: relative;
   margin-bottom: 20px;
 }
-/* line 27, ../sass/_form.scss */
+/* line 30, ../sass/_form.scss */
 .app .register #submit, .app .login #submit, .app .logout #submit {
   padding: 16px 25px;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
   background-color: #207cda;
 }
-/* line 34, ../sass/_form.scss */
+/* line 37, ../sass/_form.scss */
 .app .register #login-link, .app .login #login-link, .app .logout #login-link, .app .register #register-link, .app .login #register-link, .app .logout #register-link {
   display: inline-block;
   width: 100%;
+  transition: padding 100ms ease;
+  cursor: pointer;
 }
-/* line 40, ../sass/_form.scss */
+/* line 43, ../sass/_form.scss */
+.app .register #login-link:active, .app .login #login-link:active, .app .logout #login-link:active, .app .register #login-link:link, .app .login #login-link:link, .app .logout #login-link:link, .app .register #login-link:visited, .app .login #login-link:visited, .app .logout #login-link:visited, .app .register #register-link:active, .app .login #register-link:active, .app .logout #register-link:active, .app .register #register-link:link, .app .login #register-link:link, .app .logout #register-link:link, .app .register #register-link:visited, .app .login #register-link:visited, .app .logout #register-link:visited {
+  color: #3f72af;
+}
+/* line 46, ../sass/_form.scss */
+.app .register #login-link:hover, .app .login #login-link:hover, .app .logout #login-link:hover, .app .register #register-link:hover, .app .login #register-link:hover, .app .logout #register-link:hover {
+  color: #112d4e;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+/* line 54, ../sass/_form.scss */
 .app .register .field, .app .login .field, .app .logout .field {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-/* line 46, ../sass/_form.scss */
+/* line 60, ../sass/_form.scss */
 .app .register label, .app .login label, .app .logout label {
-  width: 40%;
+  width: 30%;
   text-align: right;
   display: inline-block;
 }
-/* line 53, ../sass/_form.scss */
+/* line 67, ../sass/_form.scss */
 .app .register input, .app .login input, .app .logout input {
-  width: 55%;
+  width: 58%;
+  padding: 4px 4px;
+  margin-left: 20px;
 }
-/* line 61, ../sass/_form.scss */
+/* line 77, ../sass/_form.scss */
 .app .register .helptext, .app .login .helptext, .app .logout .helptext {
   display: none;
   position: absolute;
@@ -91,21 +109,13 @@
   left: -150px;
 }
 /* line 86, ../sass/_form.scss */
+.app .register, .app .login, .app .logout {
+  box-shadow: 0 0 4px 1px #112d4e;
+}
+/* line 104, ../sass/_form.scss */
 .app .register form, .app .login form, .app .logout form {
   width: 100%;
   height: 100%;
-}
-/* line 91, ../sass/_form.scss */
-.app .register {
-  background-color: #b4cbf5;
-}
-/* line 95, ../sass/_form.scss */
-.app .login {
-  background-color: #b4cbf5;
-}
-/* line 99, ../sass/_form.scss */
-.app .logout {
-  background-color: #b4cbf5;
 }
 /* line 39, ../sass/intro.scss */
 .app .play {
@@ -132,23 +142,45 @@
   transform: rotateZ(-90deg);
 }
 /* line 1, ../sass/_toolbar.scss */
-.app .play-toolbar {
-  position: absolute;
-  top: 30px;
-  left: 10px;
+.app .play .play-toolbar a, .app .play-toolbar .play a {
+  border: 1px solid grey;
+  border-radius: 4px;
 }
 /* line 5, ../sass/_toolbar.scss */
-.app .play-toolbar a {
-  padding: 20px 30px;
-  background: black;
+.app .play .play-toolbar a, .app .play-toolbar .play a {
+  font-weight: bold;
+}
+/* line 8, ../sass/_toolbar.scss */
+.app .play .play-toolbar a, .app .play-toolbar .play a {
   text-decoration: none;
 }
-/* line 10, ../sass/_toolbar.scss */
-.app .play-toolbar a:active, .app .play-toolbar a:link, .app .play-toolbar a:visited {
-  color: white;
+/* line 11, ../sass/_toolbar.scss */
+.app .play .play-toolbar a, .app .play-toolbar .play a {
+  font-size: 14px;
 }
-/* line 13, ../sass/_toolbar.scss */
+/* line 14, ../sass/_toolbar.scss */
+.app .play .play-toolbar a, .app .play-toolbar .play a {
+  font-family: Helvetica;
+}
+/* line 24, ../sass/_toolbar.scss */
+.app .play-toolbar {
+  position: absolute;
+  bottom: 15%;
+  color: #3f72af;
+}
+/* line 29, ../sass/_toolbar.scss */
+.app .play-toolbar a {
+  padding: 13px 23px;
+  margin: 20px 5px;
+  box-shadow: 0 0 4px -1px #112d4e;
+  transition: all 150ms ease-in-out;
+}
+/* line 37, ../sass/_toolbar.scss */
+.app .play-toolbar a:active, .app .play-toolbar a:link, .app .play-toolbar a:visited {
+  color: #112d4e;
+}
+/* line 40, ../sass/_toolbar.scss */
 .app .play-toolbar a:hover {
-  background-color: #ddd;
-  color: black;
+  box-shadow: 0 0 4px 2px #112d4e;
+  color: #112d4e;
 }
