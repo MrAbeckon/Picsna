@@ -20,6 +20,18 @@
 	@extend %button-font-size;
 	@extend %button-font-family;
 }
+%button-styles {
+	@extend %button-font;
+	@extend %button-border;
+	padding: 13px 23px;
+	margin: 20px 5px;
+	transition: all 150ms ease-in-out;
+
+	&:active, &:link, &:visited {
+		color: #112d4e;
+	}
+	
+}
 
 &-toolbar {
 	position: absolute;
@@ -27,19 +39,22 @@
 	color: #3f72af;
 
 	a {
-		@extend %button-font;
-		@extend %button-border;
-		padding: 13px 23px;
-		margin: 20px 5px;
+		@extend %button-styles;
 		box-shadow:0 0 4px -1px #112d4e;
-		transition: all 150ms ease-in-out;
-
-		&:active, &:link, &:visited {
-			color: #112d4e;
-		}
 		&:hover {
-			box-shadow:0 0 4px 2px #112d4e;
+			box-shadow:0 0 4px 2px #323f50;
 			color: #112d4e;
 		}
 	}
+	#remove {
+		@extend %button-styles;
+		border-color: #e04444 !important;
+		color: #e04444;
+		box-shadow:0 0 4px -1px #e04444;
+		
+		&:hover {
+			box-shadow:0 0 4px 2px #e69292;
+		}
+	}
+
 }

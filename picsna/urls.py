@@ -8,6 +8,7 @@ urlpatterns = [
     path('', views.play, name='picsna-home'),
     path('play/', views.play, name='picsna-play'),
     path('addImg/', views.addImg, name='picsna-addImg'),
+    path('detail/<int:detail_id>/', views.detail, name='picsna-detail'),
 
     path('../users/register/', user_views.register, name='users-register'),
     path('../users/login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='users-login'),

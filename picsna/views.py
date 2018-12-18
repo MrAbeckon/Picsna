@@ -1,42 +1,55 @@
 from django.shortcuts import render, redirect
 from django.core.files.uploadedfile import SimpleUploadedFile
-from .models import CompleteV
+from .models import Comment
 from .models import DetailV
 from .forms import AddImg
-from .forms import Complete
+from .forms import CommentForm
+from PIL import Image
+
+# is_checked = IntVar()
 
 def play(request):
 	context = {
 		'detailViews': DetailV.objects.all(),
-		# 'detailImgPath': 
-		# 	[ 
-		# 	  DetailV.objects.first().picture.name.split('/')[3], 
-		# 	  DetailV.objects.second().picture.name.split('/')[3],
-		# 	  DetailV.objects.third().picture.name.split('/')[3],
-		# 	  DetailV.objects.last().picture.name.split('/')[3]
-		# 	 ],
-		'completeView': CompleteV.objects.last(),
 		'title': 'Play',
-		'user': request.user
+		'user': request.user,
 	}
+	
 	return render(request, 'picsna/play.html', context)
 
 def addImg(request):
 
 	if request.method == 'POST':
-
 		form = AddImg(request.POST, request.FILES) 
-        # form = super(AddImg, self).save(commit=False)
-        # form.author = request.user
-
 		if form.is_valid():
 			form.save()			
 		else:
 			print("Invalid Form")	
 
-		return redirect('picsna-play')
-			
+		return redirect('picsna-play')		
 	else:
 		form = AddImg();
 
 	return render(request, 'picsna/addImg.html', {'form' : form })
+
+def detail(request, detail_id):
+
+	# FORM MANIPULATION FOR COMMENT
+	if request.method == 'POST':
+		form = CommentForm(request.POST)
+		if form.is_valid():
+			form.save()			
+		else:
+			print("Invalid Form")	
+	
+	form = CommentForm(initial={'detail': DetailV.objects.get(id=detail_id)})
+
+	context = {
+		'title': 'Detail',
+		'detail': DetailV.objects.get(id=detail_id),
+		'comments': Comment.objects.filter(detail=detail_id),
+		'user': request.user,
+		'form': form,
+	}
+
+	return render(request, 'picsna/detail.html', context)

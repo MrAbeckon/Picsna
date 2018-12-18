@@ -1,0 +1,67 @@
+{% extends "picsna/base.html" %}
+{% block content %}
+	
+  <div class="detail">
+    
+    <div class="preview">
+
+      <img class="detail-img" src="../../../{{ detail.picture.url|cut:"picsna/" }}" alt="{{ detail.title }}">  
+
+    </div>
+
+    <div class="comments">
+    
+      {% for comment in comments %}
+      
+        <div class="comment">
+          <span class="user">
+            {{comment.author}}
+          </span>
+          <p>
+            {{comment.content}}
+          </p>
+
+        </div>
+
+      {% endfor %}
+
+    </div>
+
+
+  {% if user.is_authenticated %}
+    <form enctype="multipart/form-data" method="POST" id="comment-form" name="form" >  
+    
+      {% csrf_token %}
+      <fieldset id="comment-fieldset" class="form-group">
+        {{form.errors}}
+
+        <div class="detail-field">
+          <label for="id_detail">Detail:</label>
+          {{ form.detail }}
+        </div>
+        <div class="author-field">
+          <label for="id_author">Author:</label>
+          {{ form.author }}
+        </div>
+        <div class="comment-field">
+          <label for="id_comment">Comment:</label>
+          {{ form.content }}
+        </div>
+
+      </fieldset>
+    
+      <a id="back" href="{% url 'picsna-play' %}">BACK</a>
+      <button type="submit" id="submit">Add comment</button>
+      
+    </form>
+
+  {% else %}
+
+	<div class="failure">
+		<h3>You have no permission</h3>
+		<p>please <a href="{% url 'users-login' %}">Login</a> or <a href="{% url 'users-register' %}">Register</a> to proceed.</p>
+	</div>
+
+  {% endif %}
+  </div>
+{% endblock content %}
