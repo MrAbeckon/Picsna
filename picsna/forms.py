@@ -1,15 +1,15 @@
 # from django.core.files.uploadedfile import SimpleUploadedFile
 from django.forms import ModelForm
-from .models import CompleteV
+from .models import Comment
 from .models import DetailV
 
 class AddImg(ModelForm):
 	class Meta:
 		model = DetailV
-		fields = ['picture','title', 'link', 'author', 'completev']
+		fields = ['picture','title', 'link', 'author']
 
-class Complete(ModelForm):
+class CommentForm(ModelForm):
 	class Meta:
-		model = CompleteV
-		fields = ['picture', 'title', 'link', 'description']
+		model = Comment
+		fields = ['detail', 'author', 'content']
 		
