@@ -1,0 +1,368 @@
+/* line 3, ../sass/intro.scss */
+.app .register fieldset, .app .login fieldset, .app .logout fieldset, .app .addImg fieldset, .app #comment-form fieldset {
+  text-align: center;
+}
+
+/* line 6, ../sass/intro.scss */
+.app, .app .register fieldset, .app .login fieldset, .app .logout fieldset, .app .addImg fieldset, .app #comment-form fieldset, .app .register, .app .login, .app .logout, .app .addImg, .app #comment-form, .app .play {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+/* line 13, ../sass/intro.scss */
+.app .play .detail-item .detail-img {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 17, ../sass/intro.scss */
+.app .play .detail-item .detail-description {
+  display: none;
+}
+
+/* line 20, ../sass/intro.scss */
+.app {
+  width: 100%;
+  height: 100vh;
+}
+
+/* line 3, ../sass/_form.scss */
+.app .register, .app .login, .app .logout, .app .addImg, .app #comment-form {
+  width: 400px;
+}
+/* line 6, ../sass/_form.scss */
+.app .register, .app .login, .app .logout, .app .addImg, .app #comment-form {
+  border: 1px solid #ddd;
+  border-radius: 2px;
+}
+/* line 10, ../sass/_form.scss */
+.app .register, .app .login, .app .logout, .app .addImg, .app #comment-form {
+  padding: 30px 20px;
+}
+/* line 13, ../sass/_form.scss */
+.app .register, .app .login, .app .logout, .app .addImg, .app #comment-form {
+  font-family: 'Arial';
+}
+/* line 16, ../sass/_form.scss */
+.app .register input, .app .login input, .app .logout input, .app .addImg input, .app #comment-form input {
+  border-radius: 5px;
+  border: 1px solid #3f72af;
+}
+/* line 19, ../sass/_form.scss */
+.app .register input:active, .app .login input:active, .app .logout input:active, .app .addImg input:active, .app #comment-form input:active {
+  border-color: #112d4e;
+}
+/* line 25, ../sass/_form.scss */
+.app .register fieldset, .app .login fieldset, .app .logout fieldset, .app .addImg fieldset, .app #comment-form fieldset {
+  position: relative;
+  margin-bottom: 20px;
+}
+/* line 33, ../sass/_form.scss */
+.app .register #submit, .app .login #submit, .app .logout #submit, .app .addImg #submit, .app #comment-form #submit {
+  padding: 16px 25px;
+  margin-bottom: 25px;
+  background-color: #207cda;
+  font-size: 12px;
+  transition: all 200ms ease-in-out;
+  box-shadow: 0 0 3px -1px #70ccfa;
+  border-radius: 7px;
+  border: none;
+  color: #fff;
+}
+/* line 44, ../sass/_form.scss */
+.app .register #submit:hover, .app .login #submit:hover, .app .logout #submit:hover, .app .addImg #submit:hover, .app #comment-form #submit:hover {
+  box-shadow: 0 0 3px 1px #207cda;
+  background-color: white;
+  color: #000;
+}
+/* line 52, ../sass/_form.scss */
+.app .register #login-link, .app .login #login-link, .app .logout #login-link, .app .addImg #login-link, .app #comment-form #login-link, .app .register #register-link, .app .login #register-link, .app .logout #register-link, .app .addImg #register-link, .app #comment-form #register-link {
+  display: inline-block;
+  width: 100%;
+  transition: transform 300ms ease;
+  cursor: pointer;
+}
+/* line 58, ../sass/_form.scss */
+.app .register #login-link:active, .app .login #login-link:active, .app .logout #login-link:active, .app .addImg #login-link:active, .app #comment-form #login-link:active, .app .register #login-link:link, .app .login #login-link:link, .app .logout #login-link:link, .app .addImg #login-link:link, .app #comment-form #login-link:link, .app .register #login-link:visited, .app .login #login-link:visited, .app .logout #login-link:visited, .app .addImg #login-link:visited, .app #comment-form #login-link:visited, .app .register #register-link:active, .app .login #register-link:active, .app .logout #register-link:active, .app .addImg #register-link:active, .app #comment-form #register-link:active, .app .register #register-link:link, .app .login #register-link:link, .app .logout #register-link:link, .app .addImg #register-link:link, .app #comment-form #register-link:link, .app .register #register-link:visited, .app .login #register-link:visited, .app .logout #register-link:visited, .app .addImg #register-link:visited, .app #comment-form #register-link:visited {
+  color: #3f72af;
+}
+/* line 61, ../sass/_form.scss */
+.app .register #login-link:hover, .app .login #login-link:hover, .app .logout #login-link:hover, .app .addImg #login-link:hover, .app #comment-form #login-link:hover, .app .register #register-link:hover, .app .login #register-link:hover, .app .logout #register-link:hover, .app .addImg #register-link:hover, .app #comment-form #register-link:hover {
+  color: #112d4e;
+  transform: scale(1.03);
+}
+/* line 69, ../sass/_form.scss */
+.app .register .field, .app .login .field, .app .logout .field, .app .addImg .field, .app #comment-form .field {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+/* line 75, ../sass/_form.scss */
+.app .register label, .app .login label, .app .logout label, .app .addImg label, .app #comment-form label {
+  width: 20%;
+  text-align: right;
+  display: inline-block;
+  font-family: 'American Typewriter';
+}
+/* line 83, ../sass/_form.scss */
+.app .register input, .app .login input, .app .logout input, .app .addImg input, .app #comment-form input {
+  width: 68%;
+  padding: 4px 4px;
+  margin-left: 20px;
+}
+/* line 93, ../sass/_form.scss */
+.app .register .helptext, .app .login .helptext, .app .logout .helptext, .app .addImg .helptext, .app #comment-form .helptext {
+  display: none;
+  position: absolute;
+  bottom: 70px;
+  left: -150px;
+}
+/* line 100, ../sass/_form.scss */
+.app #back, .app .play-toolbar a, .app .play-toolbar #remove {
+  padding: 17px 23px;
+  margin: 20px 5px;
+  transition: all 150ms ease-in-out;
+  text-decoration: none;
+  font-size: 12px;
+}
+/* line 109, ../sass/_form.scss */
+.app #back:active, .app .play-toolbar a:active, .app .play-toolbar #remove:active, .app #back:link, .app .play-toolbar a:link, .app .play-toolbar #remove:link, .app #back:visited, .app .play-toolbar a:visited, .app .play-toolbar #remove:visited {
+  color: #fff;
+}
+/* line 116, ../sass/_form.scss */
+.app .register, .app .login, .app .logout, .app .addImg, .app #comment-form {
+  box-shadow: 0 0 111px -12px #999;
+}
+/* line 135, ../sass/_form.scss */
+.app .register form, .app .login form, .app .logout form, .app .addImg form, .app #comment-form form {
+  width: 100%;
+  height: 100%;
+}
+/* line 146, ../sass/_form.scss */
+.app .login #login-success {
+  display: none;
+}
+/* line 153, ../sass/_form.scss */
+.app #back {
+  border-radius: 7px;
+  background-color: #bb2727;
+  color: #fff;
+}
+/* line 159, ../sass/_form.scss */
+.app #back:hover {
+  background-color: #fff;
+  box-shadow: 0 0 4px 2px #bb2727;
+  color: #bb2727;
+}
+/* line 167, ../sass/_form.scss */
+.app .addImg .complete-view label {
+  width: 30%;
+}
+/* line 172, ../sass/_form.scss */
+.app #comment-form {
+  width: 500px;
+  padding: 0 50px;
+  left: 20%;
+  border: none;
+  box-shadow: none;
+  border: 1px solid #555;
+}
+/* line 184, ../sass/_form.scss */
+.app #comment-form fieldset {
+  padding: 20px 50px 0 75px;
+  text-align: left;
+  width: 100%;
+}
+/* line 189, ../sass/_form.scss */
+.app #comment-form fieldset div {
+  margin: 10px 0;
+}
+/* line 192, ../sass/_form.scss */
+.app #comment-form fieldset .comment-field {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 20px;
+}
+/* line 197, ../sass/_form.scss */
+.app #comment-form fieldset .comment-field label {
+  padding-right: 8px;
+}
+/* line 200, ../sass/_form.scss */
+.app #comment-form fieldset .comment-field textarea {
+  height: 50px;
+  border-radius: 12px;
+}
+/* line 206, ../sass/_form.scss */
+.app #comment-form #submit {
+  margin-top: 24px;
+}
+/* line 36, ../sass/intro.scss */
+.app .play {
+  width: 100%;
+}
+/* line 39, ../sass/intro.scss */
+.app .play {
+  padding: 7% 12%;
+}
+/* line 42, ../sass/intro.scss */
+.app .play .detail-item {
+  width: 80px;
+  height: 80px;
+}
+/* line 49, ../sass/intro.scss */
+.app .play .detail-item {
+  margin: 10px;
+}
+/* line 1, ../sass/_toolbar.scss */
+.app .play #back, .app .play .play-toolbar a, .app .play-toolbar .play a, .app .play .play-toolbar #remove, .app .play-toolbar .play #remove {
+  border: 1px solid grey;
+  border-radius: 4px;
+}
+/* line 5, ../sass/_toolbar.scss */
+.app .play #back, .app .play .play-toolbar a, .app .play-toolbar .play a, .app .play .play-toolbar #remove, .app .play-toolbar .play #remove {
+  font-weight: bold;
+}
+/* line 8, ../sass/_toolbar.scss */
+.app .play #back, .app .play .play-toolbar a, .app .play-toolbar .play a, .app .play .play-toolbar #remove, .app .play-toolbar .play #remove {
+  text-decoration: none;
+}
+/* line 11, ../sass/_toolbar.scss */
+.app .play #back, .app .play .play-toolbar a, .app .play-toolbar .play a, .app .play .play-toolbar #remove, .app .play-toolbar .play #remove {
+  font-size: 14px;
+}
+/* line 14, ../sass/_toolbar.scss */
+.app .play #back, .app .play .play-toolbar a, .app .play-toolbar .play a, .app .play .play-toolbar #remove, .app .play-toolbar .play #remove {
+  font-family: Helvetica;
+}
+/* line 23, ../sass/_toolbar.scss */
+.app .play #back, .app .play .play-toolbar a, .app .play-toolbar .play a, .app .play .play-toolbar #remove, .app .play-toolbar .play #remove {
+  padding: 13px 23px;
+  margin: 20px 5px;
+  transition: all 150ms ease-in-out;
+}
+/* line 30, ../sass/_toolbar.scss */
+.app .play #back:active, .app .play .play-toolbar a:active, .app .play-toolbar .play a:active, .app .play .play-toolbar #remove:active, .app .play-toolbar .play #remove:active, .app .play #back:link, .app .play .play-toolbar a:link, .app .play-toolbar .play a:link, .app .play .play-toolbar #remove:link, .app .play-toolbar .play #remove:link, .app .play #back:visited, .app .play .play-toolbar a:visited, .app .play-toolbar .play a:visited, .app .play .play-toolbar #remove:visited, .app .play-toolbar .play #remove:visited {
+  color: #112d4e;
+}
+/* line 36, ../sass/_toolbar.scss */
+.app .play-toolbar {
+  position: absolute;
+  bottom: 15%;
+  color: #3f72af;
+}
+/* line 41, ../sass/_toolbar.scss */
+.app .play-toolbar a {
+  box-shadow: 0 0 4px -1px #112d4e;
+}
+/* line 44, ../sass/_toolbar.scss */
+.app .play-toolbar a:hover {
+  box-shadow: 0 0 4px 2px #323f50;
+  color: #112d4e;
+}
+/* line 49, ../sass/_toolbar.scss */
+.app .play-toolbar #remove {
+  border-color: #e04444 !important;
+  color: #e04444;
+  box-shadow: 0 0 4px -1px #e04444;
+}
+/* line 55, ../sass/_toolbar.scss */
+.app .play-toolbar #remove:hover {
+  box-shadow: 0 0 4px 2px #e69292;
+}
+/* line 74, ../sass/intro.scss */
+.app .play .detail-item .container {
+  display: block;
+  position: relative;
+  padding-left: 12px;
+  margin-bottom: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* line 86, ../sass/intro.scss */
+.app .play .detail-item .container .checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+/* line 93, ../sass/intro.scss */
+.app .play .detail-item .container .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+}
+/* line 102, ../sass/intro.scss */
+.app .play .detail-item .container:hover .checkbox ~ .checkmark {
+  background-color: #ccc;
+}
+/* line 105, ../sass/intro.scss */
+.app .play .detail-item .container .checkbox:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+/* line 108, ../sass/intro.scss */
+.app .play .detail-item .container .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+/* line 113, ../sass/intro.scss */
+.app .play .detail-item .container .detail-remove:checked ~ .checkmark:after {
+  display: block;
+}
+/* line 116, ../sass/intro.scss */
+.app .play .detail-item .container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/* line 130, ../sass/intro.scss */
+.app .detail {
+  border-radius: 2px;
+}
+/* line 132, ../sass/intro.scss */
+.app .detail .preview {
+  padding: 50px;
+}
+/* line 134, ../sass/intro.scss */
+.app .detail .preview .detail-img {
+  width: 500px;
+  margin-bottom: 50px;
+}
+/* line 139, ../sass/intro.scss */
+.app .detail .comments {
+  padding: 50px;
+}
+/* line 142, ../sass/intro.scss */
+.app .detail .comments .comment {
+  width: 100%;
+  background-color: #eee;
+  display: flex;
+  padding: 10px 10px;
+}
+/* line 148, ../sass/intro.scss */
+.app .detail .comments .comment .user {
+  width: 25%;
+  font-family: 'American Typewriter';
+  border-right: 0.5px solid #888;
+}
+/* line 153, ../sass/intro.scss */
+.app .detail .comments .comment p {
+  text-indent: 15px;
+}
